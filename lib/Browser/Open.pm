@@ -23,6 +23,7 @@ my @known_commands = (
   ['MSWin32', 'start', undef, 1],
   ['solaris', 'xdg-open'],
   ['solaris', 'firefox'],
+  ['linux',   'sensible-browser'],
   ['linux',   'xdg-open'],
   ['linux',   'x-www-browser'],
   ['linux',   'www-browser'],
