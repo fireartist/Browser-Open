@@ -1,4 +1,7 @@
 package Browser::Open;
+our $VERSION = '0.03';
+
+
 
 use strict;
 use warnings;
@@ -99,6 +102,10 @@ __END__
 
 Browser::Open - open a browser in a given URL
 
+
+=head1 VERSION
+
+version 0.03
 
 =head1 SYNOPSIS
 
