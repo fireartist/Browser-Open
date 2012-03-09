@@ -1,0 +1,7 @@
+.build/
+Browser-Open-*/
+Browser-Open-*.tar.gz
+MANIFEST
+MANIFEST.SKIP
+LICENSE
+*.kpf
