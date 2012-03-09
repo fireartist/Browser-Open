@@ -13,7 +13,11 @@ use Browser::Open qw(
 my $cmd = open_browser_cmd();
 if ($cmd) {
   ok($cmd,    "got command '$cmd'");
+  
+SKIP: {
+  skip "Won't test execution on MSWin32", 1 if $^O eq 'MSWin32';
   ok(-x $cmd, '... and we can execute it');
+}
 
   diag("Found '$cmd' for '$^O'");
 
