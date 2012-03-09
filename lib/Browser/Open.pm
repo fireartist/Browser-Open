@@ -20,7 +20,7 @@ my @known_commands = (
   ['', $ENV{BROWSER}],
   ['darwin',  '/usr/bin/open', 1],
   ['cygwin',  'start'],
-  ['MSWin32', 'start'],
+  ['MSWin32', 'start', undef, 1],
   ['solaris', 'xdg-open'],
   ['solaris', 'firefox'],
   ['linux',   'xdg-open'],
@@ -72,11 +72,13 @@ sub _check_all_cmds {
   my ($filter) = @_;
 
   foreach my $spec (@known_commands) {
-    my ($osname, $cmd, $exact) = @$spec;
+    my ($osname, $cmd, $exact, $no_search) = @$spec;
     next unless $cmd;
     next if $osname && $filter && $osname ne $filter;
+    next if $no_search && !$filter && $osname ne $^O;
 
     return $cmd if $exact && -x $cmd;
+    return $cmd if $no_search;
     $cmd = _search_in_path($cmd);
     return $cmd if $cmd;
   }
