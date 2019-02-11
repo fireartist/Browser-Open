@@ -19,7 +19,7 @@ use parent 'Exporter';
 my @known_commands = (
   ['', $ENV{BROWSER}],
   ['darwin',  '/usr/bin/open', 1],
-  ['cygwin',  'start'],
+  ['cygwin',  'cygstart'],
   ['MSWin32', 'start', undef, 1],
   ['solaris', 'xdg-open'],
   ['solaris', 'firefox'],
