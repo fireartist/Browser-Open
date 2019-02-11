@@ -16,6 +16,13 @@ WriteMakefile(
     "Test::More" => '0.92',
     "parent" => '0',
   },
+  (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (
+    META_MERGE => {
+      resources => {
+        repository => 'git://github.com/fireartist/Browser-Open',
+      },
+    }
+  ) : ()),
   test => {TESTS => 't/*.t'}
 );
 
